@@ -1,0 +1,38 @@
+[package]
+name = "framework-vesting-script"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[package.metadata.ckb-contract]
+vm-tests = "framework-vm-tests"
+idl = "framework-vesting-idl"
+
+[features]
+vm = []
+idl = ["dep:ckb-contract-idl"]
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "framework-vesting-script"
+path = "src/main.rs"
+required-features = ["vm"]
+test = false
+bench = false
+
+[[bin]]
+name = "framework-vesting-idl"
+path = "src/bin/idl.rs"
+required-features = ["idl"]
+test = false
+bench = false
+
+[dependencies]
+ckb-contract-derive.workspace = true
+ckb-contract-core.workspace = true
+ckb-contract-onchain.workspace = true
+ckb-std.workspace = true
+ckb-contract-idl = { workspace = true, optional = true }

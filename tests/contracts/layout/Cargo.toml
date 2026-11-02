@@ -1,0 +1,25 @@
+[package]
+name = "framework-layout-test-script"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[package.metadata.ckb-contract]
+vm-tests = "framework-vm-tests"
+
+[features]
+vm = []
+
+[[bin]]
+name = "framework-layout-test-script"
+path = "src/main.rs"
+required-features = ["vm"]
+test = false
+bench = false
+
+[dependencies]
+ckb-contract-core.workspace = true
+ckb-contract-onchain.workspace = true
+framework-counter-script.workspace = true
+ckb-std.workspace = true

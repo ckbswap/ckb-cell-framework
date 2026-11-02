@@ -1,0 +1,13 @@
+[package]
+name = "ckb-contract-idl"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+ckb-contract-core.workspace = true
+serde_json = "=1.0.154"
+
+[dev-dependencies]
+framework-vesting-script.workspace = true

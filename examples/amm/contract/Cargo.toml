@@ -1,0 +1,28 @@
+[package]
+name = "framework-amm-script"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[package.metadata.ckb-contract]
+vm-tests = "framework-vm-tests"
+
+[lib]
+path = "src/lib.rs"
+
+[features]
+vm = []
+
+[[bin]]
+name = "framework-amm-script"
+path = "src/main.rs"
+required-features = ["vm"]
+test = false
+bench = false
+
+[dependencies]
+ckb-contract-derive.workspace = true
+ckb-contract-core.workspace = true
+ckb-contract-onchain.workspace = true
+ckb-std.workspace = true

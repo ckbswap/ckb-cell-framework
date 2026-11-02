@@ -1,0 +1,36 @@
+[workspace]
+members = ["crates/core", "crates/idl", "crates/derive", "crates/cli", "crates/onchain", "crates/tx", "crates/testkit", "examples/counter/contract", "examples/vault/contract", "examples/escrow/contract", "examples/vesting/contract", "examples/limit-order/contract", "examples/amm/contract", "tests", "tests/contracts/layout"]
+default-members = ["crates/core", "crates/idl", "crates/derive", "crates/cli", "crates/onchain", "crates/tx", "crates/testkit", "examples/counter/contract", "examples/vault/contract", "examples/escrow/contract", "examples/vesting/contract", "examples/limit-order/contract", "examples/amm/contract"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+publish = false
+
+[workspace.dependencies]
+framework-counter-script = { path = "examples/counter/contract" }
+framework-vault-script = { path = "examples/vault/contract" }
+framework-escrow-script = { path = "examples/escrow/contract" }
+framework-vesting-script = { path = "examples/vesting/contract" }
+framework-limit-order-script = { path = "examples/limit-order/contract" }
+framework-amm-script = { path = "examples/amm/contract" }
+ckb-contract-idl = { path = "crates/idl" }
+ckb-contract-derive = { path = "crates/derive" }
+ckb-contract-core = { path = "crates/core" }
+ckb-contract-onchain = { path = "crates/onchain" }
+ckb-contract-tx = { path = "crates/tx" }
+ckb-contract-testkit = { path = "crates/testkit" }
+blake2b-ref = "=0.3.1"
+uint = { version = "=0.10.0", default-features = false }
+ckb-std = { version = "=1.1.0", default-features = false, features = ["allocator", "ckb-types", "libc", "build-with-clang"] }
+ckb-testtool = "=1.1.1"
+ckb-types = "=1.1.4"
+
+[profile.release]
+overflow-checks = true
+panic = "abort"
+opt-level = "s"
+lto = true
+codegen-units = 1

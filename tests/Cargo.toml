@@ -1,0 +1,22 @@
+[package]
+name = "framework-vm-tests"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[features]
+vm-tests = []
+
+[dev-dependencies]
+ckb-testtool.workspace = true
+ckb-contract-core.workspace = true
+ckb-contract-tx.workspace = true
+ckb-contract-testkit.workspace = true
+framework-vault-script.workspace = true
+framework-counter-script.workspace = true
+framework-escrow-script.workspace = true
+framework-vesting-script.workspace = true
+framework-limit-order-script.workspace = true
+serde_json = "=1.0.154"
+framework-amm-script.workspace = true

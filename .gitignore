@@ -1,0 +1,12 @@
+/target/
+/build/
+/vendor/
+.DS_Store
+__pycache__/
+*.py[cod]
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+examples/counter/web/public/deployment.json.pending

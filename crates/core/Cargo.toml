@@ -1,0 +1,13 @@
+[package]
+name = "ckb-contract-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+blake2b-ref.workspace = true
+uint.workspace = true
+
+[dev-dependencies]
+ckb-contract-derive.workspace = true

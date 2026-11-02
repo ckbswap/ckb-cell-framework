@@ -1,0 +1,5 @@
+[target.riscv64imac-unknown-none-elf]
+rustflags = ["-C", "passes=lower-atomic", "-C", "link-arg=--no-relax"]
+
+[alias]
+cell = "run --quiet --package cargo-cell --bin cargo-cell --"

@@ -1,0 +1,16 @@
+[package]
+name = "ckb-contract-onchain"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+ckb-contract-derive.workspace = true
+ckb-contract-core.workspace = true
+ckb-std.workspace = true
+
+[dev-dependencies]
+framework-counter-script.workspace = true
+framework-limit-order-script.workspace = true
+framework-vesting-script.workspace = true
